@@ -1,0 +1,119 @@
+
+.nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    transition: all 0.3s;
+    font-size: 1.4em;
+    z-index: 500;
+}
+
+.nav *{
+    color: var(--white);
+    text-align: center;
+}
+
+/* click to toggle nav bar on mobile */
+:checked + .nav{
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+}
+:checked + .nav .nav-mobile-toggle{
+    display: block;
+}
+:not(:checked) + .nav .nav-body{
+    -display: none;
+}
+:checked + .nav .nav-body{
+    display: block;
+}
+
+.nav-mobile-toggle{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+/* Hamburger menu CSS animation */
+.nav-mobile-toggle>i{
+    display: block;
+    position: absolute;
+    background: var(--black);
+    height: 2px;
+    transform: translateY(-1px);
+    width: 32px;
+    transition: 0.1s ease-out;
+}
+:checked + .nav .nav-mobile-toggle>i{
+    background: var(--white);
+}
+.nav-mobile-toggle>i:nth-child(1){
+    bottom: 24px;
+}
+.nav-mobile-toggle>i:nth-child(2){
+    bottom: 15px;
+}
+.nav-mobile-toggle>i:nth-child(3){
+    bottom: 6px;
+}
+:checked + .nav .nav-mobile-toggle>i{
+    bottom: 15px;
+    transform: rotate(45deg);
+}
+:checked + .nav .nav-mobile-toggle>i:nth-child(3){
+    transform: rotate(-45deg);
+}
+
+.nav-body{
+    padding: 32px 16px 16px 16px;
+}
+
+.nav hr{
+    background: var(--white);
+}
+
+.nav a, .nav strong{
+    display: block;
+    margin: 14px 0;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 550px){
+
+    .nav{
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: min(280px, 22%);
+        transition: 0;
+        font-size: 1.1em;
+    }
+
+    .nav *{
+        color: var(--black);
+        text-align: left;
+    }
+
+    .nav hr{
+        margin-left: 0;
+        width: 16px;
+        background: var(--black);
+    }
+
+    .nav-mobile-toggle{
+        display: none;
+    }
+
+    .nav-body{
+        padding: 16px;
+    }
+}
