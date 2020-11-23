@@ -22,7 +22,7 @@
     right: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
 }
 :checked + .nav .nav-mobile-toggle{
     display: block;
@@ -47,7 +47,7 @@
 .nav-mobile-toggle>i{
     display: block;
     position: absolute;
-    background: var(--black);
+    background: var(--white);
     height: 2px;
     transform: translateY(-1px);
     width: 32px;
@@ -99,14 +99,14 @@
     }
 
     .nav *{
-        color: var(--black);
+        color: var(--white);
         text-align: left;
     }
 
     .nav hr{
         margin-left: 0;
         width: 16px;
-        background: var(--black);
+        background: var(--white);
     }
 
     .nav-mobile-toggle{

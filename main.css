@@ -5,10 +5,8 @@
 * {
     box-sizing: border-box;
 
-    --white: #fff;
-    --black: #233;
-    --light-green: #B4CDD1;
-    --light-blue: #9BBFDF;
+    --white: rgb(240, 233, 218);
+    --black: #172020;
 }
 
 ::selection{
@@ -24,16 +22,8 @@ body{
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.7em;
-    color: var(--black);
-    background: var(--white);
-}
-
-body[blue]{
-    background: var(--light-blue);
-}
-
-body[green]{
-    background: var(--light-green);
+    color: var(--white);
+    background: var(--black);
 }
 
 section{
@@ -72,7 +62,7 @@ hr{
 }
 
 a{
-    color: var(--black);
+    color: var(--white);
     text-decoration: none;
 }
 
