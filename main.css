@@ -22,8 +22,8 @@ body{
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.7em;
-    color: var(--white);
-    background: var(--black);
+    color: var(--black);
+    background: var(--white);
 }
 
 section{
@@ -58,11 +58,11 @@ hr{
     height: 1px;
     margin: 1.2em auto;
     border-width: 0;
-    background: var(--black);
+    background: var(--white);
 }
 
 a{
-    color: var(--white);
+    color: var(--black);
     text-decoration: none;
 }
 

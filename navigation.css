@@ -47,7 +47,7 @@
 .nav-mobile-toggle>i{
     display: block;
     position: absolute;
-    background: var(--white);
+    background: var(--black);
     height: 2px;
     transform: translateY(-1px);
     width: 32px;
@@ -99,14 +99,14 @@
     }
 
     .nav *{
-        color: var(--white);
+        color: var(--black);
         text-align: left;
     }
 
     .nav hr{
         margin-left: 0;
         width: 16px;
-        background: var(--white);
+        background: var(--black);
     }
 
     .nav-mobile-toggle{
