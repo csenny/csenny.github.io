@@ -5,8 +5,8 @@
 * {
     box-sizing: border-box;
 
-    --white: rgb(240, 233, 218);
-    --black: #172020;
+    --white: #ccc;
+    --black: #171717;
 }
 
 ::selection{
