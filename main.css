@@ -58,7 +58,7 @@ hr{
     height: 1px;
     margin: 1.2em auto;
     border-width: 0;
-    background: var(--white);
+    background: var(--black);
 }
 
 a{
