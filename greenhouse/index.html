@@ -9,8 +9,16 @@
 
     <link rel="stylesheet" href="../project.css"/>
 
+    <script src="../project.js"></script>
+
 </head>
 <body>
+
+    <div id='image-display' class="image-display" hidden>
+        <img id='displayed'>
+        <div id='prev' class="arrow" left><i></i></div>
+        <div id='next' class="arrow" right><i></i></div>
+    </div>
 
     <input type="checkbox" id="show-nav" hidden>
     <div class="nav">
@@ -32,29 +40,21 @@
         <p>A 3D environment of a small greenhouse.</p>
         <p>Created using Maya, Substance Painter, Substance Designer, ZBrush, and Unreal Engine.</p>
         <div class="columns">
-            <input type="checkbox" id="img-1">
-            <label for="img-1"><img src="render1.png"/></label>
+            <img x-zoom src="render1.png"/>
             
-            <input type="checkbox" id="img-2">
-            <label for="img-2"><img src="render2.png"/></label>
+            <img x-zoom src="render2.png"/>
             
-            <input type="checkbox" id="img-3">
-            <label for="img-3"><img src="render3.png"/></label>
+            <img x-zoom src="render3.png"/>
             
-            <input type="checkbox" id="img-4">
-            <label for="img-4"><img src="render4.png"/></label>
+            <img x-zoom src="render4.png"/>
             
-            <input type="checkbox" id="img-5">
-            <label for="img-5"><img src="render5.png"/></label>
+            <img x-zoom src="render5.png"/>
             
-            <input type="checkbox" id="img-6">
-            <label for="img-6"><img src="render6.png"/></label>
+            <img x-zoom src="render6.png"/>
             
-            <input type="checkbox" id="img-7">
-            <label for="img-7"><img src="render7.png"/></label>
+            <img x-zoom src="render7.png"/>
             
-            <input type="checkbox" id="img-8">
-            <label for="img-8"><img src="render8.png"/></label>
+            <img x-zoom src="render8.png"/>
         </div>
     </section>
 

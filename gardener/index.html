@@ -9,8 +9,16 @@
 
     <link rel="stylesheet" href="../project.css"/>
 
+    <script src="../project.js"></script>
+
 </head>
 <body>
+
+    <div id='image-display' class="image-display" hidden>
+        <img id='displayed'>
+        <div id='prev' class="arrow" left><i></i></div>
+        <div id='next' class="arrow" right><i></i></div>
+    </div>
 
     <input type="checkbox" id="show-nav" hidden>
     <div class="nav">
@@ -32,26 +40,19 @@
         <p>A T-posed 3D character model of a gardener girl.</p>
         <p>Created using ZBrush, Substance Painter, Maya, and Unreal Engine.</p>
         <div class="columns">
-            <input type="checkbox" id="img-1">
-            <label for="img-1"><img src="render.png"/></label>
+            <img x-zoom src="render.png"/>
             
-            <input type="checkbox" id="img-2">
-            <label for="img-2"><img src="front.png"/></label>
+            <img x-zoom src="front.png"/>
             
-            <input type="checkbox" id="img-3">
-            <label for="img-3"><img src="back.png"/></label>
+            <img x-zoom src="back.png"/>
             
-            <input type="checkbox" id="img-4">
-            <label for="img-4"><img src="sculpt.png"/></label>
+            <img x-zoom src="sculpt.png"/>
             
-            <input type="checkbox" id="img-5">
-            <label for="img-5"><img src="side.png"/></label>
+            <img x-zoom src="side.png"/>
             
-            <input type="checkbox" id="img-7">
-            <label for="img-7"><img src="threequarters.png"/></label>
+            <img x-zoom src="threequarters.png"/>
             
-            <input type="checkbox" id="img-6">
-            <label for="img-6"><img src="sketch.png"/></label>
+            <img x-zoom src="sketch.png"/>
         </div>
     </section>
 

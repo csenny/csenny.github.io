@@ -1,31 +1,83 @@
 
 @import url('main.css');
 
-[type="checkbox"]{
-    display: none;
-}
-
-label{
+img[x-zoom]{
+    width: 100%;
     cursor: zoom-in;
 }
 
-:checked+label{
+.image-display{
     position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.9);
-    z-index: 999;
+    z-index: 99999;
     cursor: zoom-out;
 }
 
-img{
+.image-display img{
+    height: 100%;
     width: 100%;
+    object-fit: contain;
 }
 
-:checked+label img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.arrow{
+    position: absolute;
+    top: calc(50% - 1.25em);
+    cursor: pointer;
+    padding: 2em;
+
+    --arrow-thickness: 0.5em;
+    --arrow-offset: 1em;
+}
+.arrow[valid="false"]{
+    opacity: 0.1;
+    cursor: default;
+}
+.arrow::before{
+    content: '';
+    position: absolute;
+    bottom: var(--arrow-offset);
+    left: var(--arrow-offset);
+    right: var(--arrow-offset);
+    height: var(--arrow-thickness);
+    background: var(--white);
+    z-index: 2;
+}
+.arrow::after{
+    content: '';
+    position: absolute;
+    bottom: var(--arrow-offset);
+    right: var(--arrow-offset);
+    top: var(--arrow-offset);
+    width: var(--arrow-thickness);
+    background: var(--white);
+}
+.arrow>i::before{
+    content: '';
+    position: absolute;
+    bottom: var(--arrow-offset);
+    left: var(--arrow-offset);
+    right: var(--arrow-offset);
+    height: var(--arrow-thickness);
+    box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.9);
+}
+.arrow>i::after{
+    content: '';
+    position: absolute;
+    bottom: var(--arrow-offset);
+    right: var(--arrow-offset);
+    top: var(--arrow-offset);
+    width: var(--arrow-thickness);
+    box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.9);
+}
+.arrow[left]{
+    left: 1em;
+    transform: rotate(135deg);
+}
+.arrow[right]{
+    right: 1.5em;
+    transform: rotate(-45deg);
 }

@@ -9,8 +9,16 @@
 
     <link rel="stylesheet" href="../project.css"/>
 
+    <script src="../project.js"></script>
+
 </head>
 <body>
+
+    <div id='image-display' class="image-display" hidden>
+        <img id='displayed'>
+        <div id='prev' class="arrow" left><i></i></div>
+        <div id='next' class="arrow" right><i></i></div>
+    </div>
 
     <input type="checkbox" id="show-nav" hidden>
     <div class="nav">
@@ -33,29 +41,21 @@
         <p>These models are some of the artifacts you can find at the dig site.</p>
         <p>The player can travel between the present time back to the past to explore the recreation site, therefore two versions of each artifact exist to represent the different time periods.</p>
         <div class="columns">
-            <input type="checkbox" id="img-1">
-            <label for="img-1"><img src="standingstone.png"/></label>
+            <img x-zoom src="standingstone.png"/>
             
-            <input type="checkbox" id="img-2">
-            <label for="img-2"><img src="winejug.png"/></label>
+            <img x-zoom src="winejug.png"/>
             
-            <input type="checkbox" id="img-3">
-            <label for="img-3"><img src="pottery.png"/></label>
+            <img x-zoom src="pottery.png"/>
 
-            <input type="checkbox" id="img-4">
-            <label for="img-4"><img src="femur.png"/></label>
+            <img x-zoom src="femur.png"/>
 
-            <input type="checkbox" id="img-5">
-            <label for="img-5"><img src="cross_slab_back.png"/></label>
+            <img x-zoom src="cross_slab_back.png"/>
 
-            <input type="checkbox" id="img-6">
-            <label for="img-6"><img src="cross_slab_front.png"/></label>
+            <img x-zoom src="cross_slab_front.png"/>
 
-            <input type="checkbox" id="img-8">
-            <label for="img-8"><img src="montefortino_helmet.png"/></label>
+            <img x-zoom src="montefortino_helmet.png"/>
 
-            <input type="checkbox" id="img-7">
-            <label for="img-7"><img src="dronecontroller.png"/></label>
+            <img x-zoom src="dronecontroller.png"/>
         </div>
     </section>
 

@@ -9,8 +9,16 @@
 
     <link rel="stylesheet" href="../project.css"/>
 
+    <script src="../project.js"></script>
+
 </head>
 <body>
+
+    <div id='image-display' class="image-display" hidden>
+        <img id='displayed'>
+        <div id='prev' class="arrow" left><i></i></div>
+        <div id='next' class="arrow" right><i></i></div>
+    </div>
 
     <input type="checkbox" id="show-nav" hidden>
     <div class="nav">
@@ -32,14 +40,11 @@
         <p>A series of 3D illustrations of stylized animals.</p>
         <p>Created using ZBrush, Maya, Substance Painter and Photoshop.</p>
         
-        <input type="checkbox" id="img-1">
-        <label for="img-1"><img src="bird.png"/></label>
+        <img x-zoom src="bird.png"/>
             
-        <input type="checkbox" id="img-2">
-        <label for="img-2"><img src="croc.png"/></label>
+        <img x-zoom src="croc.png"/>
             
-        <input type="checkbox" id="img-3">
-        <label for="img-3"><img src="frog.jpg"/></label>
+        <img x-zoom src="frog.jpg"/>
     </section>
 
 </body>
