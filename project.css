@@ -1,6 +1,10 @@
 
 @import url('main.css');
 
+.no-scroll{
+    overflow: hidden;
+}
+
 img[x-zoom]{
     width: 100%;
     cursor: zoom-in;

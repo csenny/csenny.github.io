@@ -20,6 +20,7 @@ window.onload = function(){
     };
     imageDisplay.addEventListener('click', function () {
         imageDisplay.setAttribute('hidden', 'true');
+        document.body.className = '';
     });
     document.addEventListener('keydown', function (e) {
         if(!imageDisplay.hasAttribute('hidden')){
@@ -41,6 +42,7 @@ window.onload = function(){
     images.forEach(function (image, index) {
         image.addEventListener('click', function () {
             imageDisplay.removeAttribute('hidden');
+            document.body.className = 'no-scroll';
             moveToImage(index);
         });
     })
