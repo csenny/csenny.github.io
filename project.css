@@ -23,6 +23,56 @@ img[x-zoom]{
     object-fit: contain;
 }
 
+.image-display>i{
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    padding: 2em;
+    cursor: pointer;
+    font-size: 0.6em;
+}
+.image-display>i::before{
+    content: '';
+    position: absolute;
+    bottom: 1.75em;
+    top: 1.75em;
+    left: 0.5em;
+    right: 0.5em;
+    background: var(--white);
+    transform: rotate(45deg);
+    z-index: 2;
+}
+.image-display>i::after{
+    content: '';
+    position: absolute;
+    bottom: 1.75em;
+    top: 1.75em;
+    left: 0.5em;
+    right: 0.5em;
+    background: var(--white);
+    transform: rotate(-45deg);
+}
+.image-display>i>i::before{
+    content: '';
+    position: absolute;
+    bottom: 1.75em;
+    top: 1.75em;
+    left: 0.5em;
+    right: 0.5em;
+    box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.9);
+    transform: rotate(45deg);
+}
+.image-display>i>i::after{
+    content: '';
+    position: absolute;
+    bottom: 1.75em;
+    top: 1.75em;
+    left: 0.5em;
+    right: 0.5em;
+    box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.9);
+    transform: rotate(-45deg);
+}
+
 .arrow{
     position: absolute;
     top: calc(50% - 1.25em);
