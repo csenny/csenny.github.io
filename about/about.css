@@ -15,16 +15,16 @@ section h2{
     width: 40px;
     margin: 5px;
     /* transforms black to #090929 (https://codepen.io/sosuke/pen/Pjoqqp) */
-    filter: invert(3%) sepia(60%) saturate(2942%) hue-rotate(233deg) brightness(141%) contrast(104%);
+    filter: brightness(0) saturate(100%) invert(3%) sepia(60%) saturate(2942%) hue-rotate(233deg) brightness(141%) contrast(104%);
     transition: 0.2s;
 }
 .socials img[instagram]:hover{
     /* transforms black to #c13584 */
-    filter: invert(27%) sepia(97%) saturate(1795%) hue-rotate(304deg) brightness(81%) contrast(82%);
+    filter: brightness(0) saturate(100%) invert(27%) sepia(97%) saturate(1795%) hue-rotate(304deg) brightness(81%) contrast(82%);
 }
 .socials img[linkedin]:hover{
     /* transforms black to #2867b2 */
-    filter: invert(36%) sepia(10%) saturate(4493%) hue-rotate(175deg) brightness(97%) contrast(94%);
+    filter: brightness(0) saturate(100%) invert(36%) sepia(10%) saturate(4493%) hue-rotate(175deg) brightness(97%) contrast(94%);
 }
 
 #email{
