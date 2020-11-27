@@ -100,6 +100,9 @@ a{
     .columns{
         column-count: 2;
     }
+    .columns[x-three]{
+        column-count: 3;
+    }
 
     .columns>*{
         width: calc(50%-5px);
