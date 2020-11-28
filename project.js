@@ -45,5 +45,8 @@ window.onload = function(){
             document.body.className = 'no-scroll';
             moveToImage(index);
         });
-    })
+    });
+    window.requestAnimationFrame(function(){
+        document.getElementById('loading-overlay').remove();
+    });
 };
