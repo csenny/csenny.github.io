@@ -77,6 +77,47 @@ a{
     width: 100%;
 }
 
+.placeholder{
+    animation: placeholder 0.5s infinite linear;
+    position: relative;
+    display: inline-block;
+}
+.placeholder:hover::before{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 2.5px 8px 2.5px 0;
+    border-color: transparent rgba(100, 0, 0, 0.5) transparent transparent;
+    left: calc(100% + 5px);
+    top: calc(50% - 2px);
+    transform: sclaeY(50%);
+}
+.placeholder:hover::after{
+    content: 'this\a0 is\a0 placeholder\a0 content.';
+    position: absolute;
+    color: white;
+    background: rgba(100, 0, 0, 0.5);
+    padding: 4px;
+    font-size: 10px;
+    display: inline-block;
+    margin-left: 5px;
+    border-radius: 5px;
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+@keyframes placeholder{
+    from{
+        color: orange;
+    }
+    50%{
+        color: red;
+    }
+    to{
+        color: orange;
+    }
+}
+
 /* tablet sized */
 @media only screen and (min-width: 550px){
     
