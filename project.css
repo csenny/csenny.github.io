@@ -8,6 +8,8 @@
 img[x-zoom]{
     width: 100%;
     cursor: zoom-in;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .image-display{
