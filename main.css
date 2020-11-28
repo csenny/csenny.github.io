@@ -79,6 +79,10 @@ a{
     width: 100%;
 }
 
+.nomargin{
+    margin: 0;
+}
+
 .placeholder{
     animation: placeholder 0.5s infinite linear;
     position: relative;
