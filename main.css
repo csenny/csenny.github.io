@@ -7,6 +7,8 @@
 
     --white: rgb(232, 227, 227);
     --black: #090929;
+    --green: #53bd7f;
+    --dark-green: #1f5a38;
 }
 
 ::selection{

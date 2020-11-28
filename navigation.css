@@ -85,6 +85,28 @@
     display: block;
     margin: 14px 0;
     text-decoration: none;
+    position: relative;
+    transition: 0.1s;
+}
+
+.nav a:hover{
+    color: var(--dark-green);
+}
+
+.nav a::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    height: 3px;
+    left: 0;
+    width: 0;
+    background: var(--green);
+    transition: 0.15s cubic-bezier(0.000, -0.400, 1.000, 1.400);
+    border-radius: 999px;
+}
+.nav a:hover::before{
+    width: 50%;
 }
 
 @media only screen and (min-width: 550px){
