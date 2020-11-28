@@ -3,6 +3,8 @@ function clamp(t, a, b){
     return t < a ? a : t > b ? b : t;
 }
 
+document.body.className = 'no-scroll';
+
 window.onload = function(){
     let images = document.querySelectorAll("img[x-zoom]");
     let imageDisplay = document.querySelector("#image-display");
@@ -47,6 +49,7 @@ window.onload = function(){
         });
     });
     window.requestAnimationFrame(function(){
+        document.body.className = '';
         document.getElementById('loading-overlay').remove();
     });
 };
