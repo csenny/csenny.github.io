@@ -12,6 +12,14 @@ img[x-zoom]{
     margin-bottom: 5px;
 }
 
+mark{
+    margin-bottom: 20px;
+    background: none;
+}
+mark span::before{
+    content: "⮝ ";
+}
+
 .image-display{
     position: fixed;
     top: 0;
