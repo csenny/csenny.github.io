@@ -8,7 +8,7 @@ section h2{
 .socials{
     margin: auto;
     display: block;
-    width: 100px;
+    width: 150px;
     font-size: 0;
 }
 .socials img{
@@ -25,6 +25,10 @@ section h2{
 .socials img[linkedin]:hover{
     /* transforms black to #2867b2 */
     filter: brightness(0) saturate(100%) invert(36%) sepia(10%) saturate(4493%) hue-rotate(175deg) brightness(97%) contrast(94%);
+}
+.socials img[artstation]:hover{
+    /* transforms black to #13aff0 */
+    filter: invert(60%) sepia(30%) saturate(4534%) hue-rotate(162deg) brightness(98%) contrast(91%);
 }
 
 #email{
