@@ -5,6 +5,25 @@
     overflow: hidden;
 }
 
+/* Video embeds */
+.video-container {
+    width: 100%;
+    height: 0;
+    padding-top: 50%;
+    background: green;
+    position: relative;
+}
+.video-container > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* */
+
+
+
 img[x-zoom]{
     width: 100%;
     cursor: zoom-in;
