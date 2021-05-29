@@ -90,7 +90,7 @@
 }
 
 .nav a:hover{
-    color: var(--dark-green);
+    color: var(--dark-accent);
 }
 
 .nav a::before{
@@ -101,7 +101,7 @@
     height: 3px;
     left: 0;
     width: 0;
-    background: var(--green);
+    background: var(--accent);
     transition: 0.15s cubic-bezier(0.000, -0.400, 1.000, 1.400);
     border-radius: 999px;
 }
