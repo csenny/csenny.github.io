@@ -28,6 +28,9 @@ window.onload = function(){
                 moveToImage(selectedIndex-1);
             }else if(e.key == 'ArrowRight' || e.keyCode == 39){
                 moveToImage(selectedIndex+1);
+            }else if(e.key == 'Escape' || e.keyCode == 27){
+                imageDisplay.setAttribute('hidden', 'true');
+                document.body.className = '';
             }
         }
     });
