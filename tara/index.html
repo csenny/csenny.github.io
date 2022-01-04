@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiker Tara</title>
+    <style>
+        body {
+            background: #86916c;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            animation: spin 0.7s infinite linear;
+        }
+        div::before {
+            content: '';
+            width: 34px;
+            height: 34px;
+            left: 3px;
+            top: 3px;
+            position: absolute;
+            display: block;
+            background: #86916c;
+            z-index: 500;
+            border-radius: 50%;
+        }
+        div::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            display: block;
+            left: 0;
+            top: 0;
+            z-index: 50;
+            background: conic-gradient(#86916c 20%, white 0);
+        }
+        canvas {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script type='module'>
+
+        import * as THREE from 'https://cdn.skypack.dev/three@0.133.1';
+        import { OBJLoader } from './OBJLoader.js';
+
+        const renderer = new THREE.WebGLRenderer({
+            antialias: true
+        });
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color('#86916c');
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        scene.add(new THREE.DirectionalLight(0xffffff, 0.7));
+        let dirLight = new THREE.DirectionalLight(0xffffff, 0.7);
+        dirLight.position.set(10, 10, 10);
+        dirLight.castShadow = true;
+        dirLight.shadow.mapSize.width = 2048;
+        dirLight.shadow.mapSize.height = 2048;
+        scene.add(dirLight);
+        scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+
+        const texLoader = new THREE.TextureLoader();
+        const loadMat = (name, params = {}) => new THREE.MeshPhysicalMaterial({
+                ...params,
+                map: texLoader.load('res/' + name + '_Basecolor.png'),
+                normalMap: texLoader.load('res/' + name + '_Normal.png'),
+                roughnessMap: texLoader.load('res/' + name + '_Roughness.png'),
+                aoMap: texLoader.load('res/' + name + '_AO.png'),
+                aoMapIntensity: 0.3,
+                roughness: 2
+        });
+        const materials = {
+            skin: loadMat('skin', {
+                emissive: new THREE.Color('#200000'),
+                color: new THREE.Color('#e3cabc')
+            }),
+            backpack: loadMat('backpack'),
+            beanie: loadMat('BeanieSG1'),
+            boots: loadMat('boots'),
+            clothes: loadMat('clothes'),
+            hair: loadMat('hair, brows, eyes', {
+                color: new THREE.Color('#ada7a1')
+            })
+        };
+        const matMap = {
+            Arms: 'skin',
+            Shirt: 'clothes',
+            Eyes: 'hair',
+            Head: 'skin',
+            Beanie: 'beanie',
+            Hair: 'hair',
+            Eyebrows: 'hair',
+            Backpack: 'backpack',
+            Boots: 'boots',
+            no_rig_pants: 'clothes'
+        };
+
+        const objLoader = new OBJLoader();
+        objLoader.load('res/hike_rigged.obj', (result) => {
+            console.log('Loaded model:', result);
+            
+            document.body.append(renderer.domElement);
+
+            const group = new THREE.Group();
+            const shadowPlane = new THREE.Mesh(new THREE.PlaneGeometry(1000, 1000), new THREE.ShadowMaterial({ opacity: 0.2 }));
+            shadowPlane.rotation.x = -Math.PI/2;
+            shadowPlane.position.y = -4;
+            shadowPlane.receiveShadow = true;
+            group.add(shadowPlane);
+            for (let i = 0; i < result.children.length; ++i) {
+                const mat = materials[matMap[result.children[i].name]];
+                const geo = result.children[i].geometry.clone();
+                const mesh = new THREE.Mesh(geo, mat);
+                mesh.castShadow = true;
+                mesh.receiveShadow = true;
+                group.add(mesh);
+            }
+            group.rotation.x = 0.25;
+            group.position.z = -4;
+            group.position.y = -1.25;
+            group.scale.set(0.01, 0.01, 0.01);
+            scene.add(group);
+
+            let render = () => {
+                group.rotation.y += 0.015;
+                renderer.render(scene, camera);
+                requestAnimationFrame(render);
+            };
+            render();
+
+        }, () => {}, (err) => {
+            console.error(err);
+        });
+
+    </script>
+</body>
+</html>
