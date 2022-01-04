@@ -126,7 +126,10 @@
         };
 
         const objLoader = new OBJLoader();
-        objLoader.load('res/hike_rigged.obj', (result) => {
+        let path = 'res/hike_rigged.obj';
+        // workaround to Github Pages not supporting Git LFS
+        path = 'https://media.githubusercontent.com/media/csenny/csenny.github.io/master/tara/res/hike_rigged.obj';
+        objLoader.load(path, (result) => {
             console.log('Loaded model:', result);
             
             document.body.append(renderer.domElement);
@@ -138,14 +141,12 @@
             shadowPlane.receiveShadow = true;
             group.add(shadowPlane);
             for (let i = 0; i < result.children.length; ++i) {
-                console.log('Adding mesh', result.children[i].name, mesh, '...');
                 const mat = materials[matMap[result.children[i].name]];
                 const geo = result.children[i].geometry.clone();
                 const mesh = new THREE.Mesh(geo, mat);
                 mesh.castShadow = true;
                 mesh.receiveShadow = true;
                 group.add(mesh);
-                console.log('Added', result.children[i].name);
             }
             group.rotation.x = 0.25;
             group.position.z = -4;
