@@ -88,6 +88,7 @@
         dirLight.shadow.mapSize.height = 2048;
         scene.add(dirLight);
         scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+        const clock = new THREE.Clock();
 
         const texLoader = new THREE.TextureLoader();
         const loadMat = (name, params = {}) => new THREE.MeshPhysicalMaterial({
@@ -155,7 +156,8 @@
             scene.add(group);
 
             let render = () => {
-                group.rotation.y += 0.015;
+                const dt = clock.getDelta();
+                group.rotation.y += 0.2 * dt;
                 renderer.render(scene, camera);
                 requestAnimationFrame(render);
             };
