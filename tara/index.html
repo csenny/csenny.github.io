@@ -138,12 +138,14 @@
             shadowPlane.receiveShadow = true;
             group.add(shadowPlane);
             for (let i = 0; i < result.children.length; ++i) {
+                console.log('Adding mesh', result.children[i].name, mesh, '...');
                 const mat = materials[matMap[result.children[i].name]];
                 const geo = result.children[i].geometry.clone();
                 const mesh = new THREE.Mesh(geo, mat);
                 mesh.castShadow = true;
                 mesh.receiveShadow = true;
                 group.add(mesh);
+                console.log('Added', result.children[i].name);
             }
             group.rotation.x = 0.25;
             group.position.z = -4;
