@@ -16,7 +16,12 @@ window.onload = function(){
         selectedIndex = index;
         next.setAttribute('valid', '' + selectedIndex < images.length - 1);
         prev.setAttribute('valid', '' + selectedIndex > 0);
-        displayed.src = images[selectedIndex].src;
+        const ogImage = images[selectedIndex];
+        if (ogImage.hasAttribute('data-src')) {
+            displayed.src = ogImage.getAttribute('data-src');
+        } else {
+            displayed.src = ogImage.src;
+        }
     };
     imageDisplay.addEventListener('click', function () {
         imageDisplay.setAttribute('hidden', 'true');
