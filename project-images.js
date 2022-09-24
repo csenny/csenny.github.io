@@ -38,7 +38,9 @@ for (const image of images) {
             image.src = dummy.src;
             if (size == 'medium') {
                 // also pre-load the large size once the medium's ready, for the full-screen viewer
-                dummy.onload = () => {};
+                dummy.onload = () => {
+                    image.src = dummy.src; // use the larger size once it's available, might as well.
+                };
                 dummy.src = `${originalSrc.substring(0, lastSlash)}large/${originalSrc.substring(lastSlash)}`;
             }
         };
