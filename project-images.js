@@ -14,7 +14,11 @@ requestAnimationFrame(() => {
     
     // replace images with high quality versions
     for (const image of images) {
-        image.src = image.getAttribute('data-src');
+        const dummy = new Image;
+        dummy.src = image.getAttribute('data-src');
+        dummy.onload = () => {
+            image.src = dummy.src;
+        };
     }
     
     // load youtube embeds
