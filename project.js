@@ -54,14 +54,4 @@ window.onload = function(){
             moveToImage(index);
         });
     });
-    window.requestAnimationFrame(function(){
-        document.body.className = '';
-        document.getElementById('loading-overlay').remove();
-        
-        // load youtube embeds
-        const ytEmbeds = document.querySelectorAll('[data-video]');
-        for (const embed of ytEmbeds) {
-            embed.innerHTML = `<iframe src="${embed.getAttribute('data-video')}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-        }
-    });
 };
