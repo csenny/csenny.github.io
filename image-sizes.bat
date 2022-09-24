@@ -23,11 +23,23 @@ for /d %%i in (./*) do (
     cp *.jpeg medium/
     cp *.jpg medium/
     cd medium && chmod -R 777 .
+    magick mogrify -resize 512x512^> *.png
+    magick mogrify -resize 512x512^> *.jpeg
+    magick mogrify -resize 512x512^> *.jpg
+    cd ..
+    rd /q medium
+    
+    rm -rf large
+    mkdir large
+    cp *.png large/
+    cp *.jpeg large/
+    cp *.jpg large/
+    cd large && chmod -R 777 .
     magick mogrify -resize 1500x1000^> *.png
     magick mogrify -resize 1500x1000^> *.jpeg
     magick mogrify -resize 1500x1000^> *.jpg
     cd ..
-    rd /q medium
+    rd /q large
 
     cd ..
 )
