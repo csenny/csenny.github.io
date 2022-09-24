@@ -30,6 +30,7 @@ for (const image of images) {
     const originalSrc = image.getAttribute('data-src');
     const lastSlash = originalSrc.lastIndexOf('/') + 1;
     image.src = `${originalSrc.substring(0, lastSlash)}small/${originalSrc.substring(lastSlash)}`;
+    image.setAttribute('data-src', `${originalSrc.substring(0, lastSlash)}medium/${originalSrc.substring(lastSlash)}`); // use medium images instead of really large ones
     image.onload = () => {
         ++numLoaded;
         if (numLoaded >= images.length) {
