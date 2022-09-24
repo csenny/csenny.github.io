@@ -7,7 +7,7 @@ let numLoaded = 0;
 const finishedLoading = () => {
     // upon first load, remove loading indicator
     document.body.className = '';
-    document.getElementById('loading-overlay').remove();
+    document.getElementById('loading-overlay')?.remove();
     
     // replace images with high quality versions
     for (const image of images) {
@@ -33,6 +33,7 @@ for (const image of images) {
     image.setAttribute('data-src', `${originalSrc.substring(0, lastSlash)}medium/${originalSrc.substring(lastSlash)}`); // use medium images instead of really large ones
     image.onload = () => {
         ++numLoaded;
+        image.onload = () => {}; // remove event for when the image loads again with the new src
         if (numLoaded >= images.length) {
             finishedLoading();
         }
