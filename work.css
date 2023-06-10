@@ -1,6 +1,21 @@
 
 @import url('main.css');
 
+h2 {
+    text-align: center;
+}
+
+#highlights {
+    display: flex;
+    justify-content: center;
+}
+
+#highlights img {
+    width: 20%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
 #project-links a{
     display: block;
     max-width: 1000px;
